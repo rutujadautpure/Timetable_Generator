@@ -1,0 +1,66 @@
+.outer{
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+}
+
+body{
+        background-color:rgb(251, 229, 252);
+        background-image: url("f1purp2.jpg");
+        background-size: cover;
+        background-color: rbga(255,255,255,0.4);
+        background-color: rgb(98, 53, 149);
+}
+
+.box{
+    width: 15em;
+    height:15em;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    background-color:white;
+    border-radius: 23px;
+    padding: 2.8em;
+}
+.otpBoxouter{
+    margin-top:2em;
+}
+.otpBox{    
+    width:5em;
+    height:2em;
+}
+
+.resend{
+    /* margin-right:220px; */
+    margin-top:2em;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction:column;
+}
+
+.button{
+    border-radius:3em;
+    
+}
+.btn{
+    border-radius: 6px;
+    margin-top:30px;
+    width: 10em;
+    height:2em;
+    /* border: 0.5px solid rgb(253, 99, 142); */
+    background-color: rgb(116, 2, 141);
+    font-weight: 350;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 3em; */
+}
+.btn a{
+    color:rgb(250, 230, 250);
+    text-decoration: none;
+}
+
+h3{
+    color:rgb(77, 1, 94);
+}

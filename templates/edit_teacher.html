@@ -1,0 +1,120 @@
+<!-- DIV 2 DOES NOT WORK
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Teacher</title>
+<link rel="stylesheet" href="info.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Teacher</h1>
+    <form action="/update_teacher/{{ teacher.teacherid }}?div={{ div }}" method="post">
+
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ teacher.name }}"><br>
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" value="{{ teacher.subject }}"><br>
+        <label for="frequency">Frequency:</label><br>
+        <input type="text" id="frequency" name="frequency" value="{{ teacher.frequency }}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+</body>
+</html>
+-->
+
+<!-- DIV 2 DOES NOT WORK
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Teacher</title>
+<link rel="stylesheet" href="info.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Teacher</h1>
+    <form action="/update_teacher2/{{ teacher.teacherid }}" method="post">
+
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ teacher.name }}"><br>
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" value="{{ teacher.subject }}"><br>
+        <label for="frequency">Frequency:</label><br>
+        <input type="text" id="frequency" name="frequency" value="{{ teacher.frequency }}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+</body>
+</html>
+-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Teacher</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Teacher</h1>
+    {% if div == '1' %}
+    <form action="/update_teacher/{{ teacher.teacherid }}" method="post">
+    {% elif div == '2' %}
+    <form action="/update_teacher2/{{ teacher.teacherid }}" method="post">
+    {% endif %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ teacher.name }}"><br>
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" value="{{ teacher.subject }}"><br>
+        <label for="frequency">Frequency:</label><br>
+        <input type="text" id="frequency" name="frequency" value="{{ teacher.frequency }}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Teacher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+<body>
+<div class="outer">
+    <div class="background"></div>
+    
+<div class="container">
+    <form action="{% if div == '1' %}/update_teacher/{{ teacher.teacherid }}{% else %}/update_teacher2/{{ teacher.teacherid }}{% endif %}" method="post"> 
+        <h2>Edit Teacher</h2>
+        <label for="name">Teacher Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ teacher.name }}"><br>
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" value="{{ teacher.subject }}"><br>
+        <label for="frequency">Frequency:</label><br>
+        <input type="text" id="frequency" name="frequency" value="{{ teacher.frequency }}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+    
+</div>
+</div>
+
+</body>
+</html>

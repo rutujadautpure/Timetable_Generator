@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-xeXN8DRkgP28H5vzFm+fJzFLpdtw3+MHb2xp1ASL7ZHbUpKU6bGLF1vORVA9sUBj" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+
+    <title>Document</title>
+    
+</head>
+<body >
+    <div id="popup">
+        <p id="error-message">{{ error_message }}</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+    <aside id="side-panel">
+        <ul>
+            <li><a href="user.html"><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px">User</a></li>
+
+            
+                <li><a href="displayteacher.html"><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px" >Available Teacher</a></li>
+                
+                
+                
+                <li><a href="timetable.html"><img src="{{ url_for('static',filename='table.jpg')}}" width="30px">Generatetimetable</a></li>
+                <li><a href=""  id="add-classroom-link"><img src="{{ url_for('static',filename='class.png')}}" width="30px">Classes</a></li>
+                <li><a href="teacher.html"><img src="{{ url_for('static',filename='presentation_1436766.png')}}" width="30px">Teachers</a></li>
+                <li><a href="{{url_for('logout')}}"><img src="{{ url_for('static',filename='logout.png')}}" width="30px">Logout</a></li>
+                
+                </ul>
+        </ul>
+    </aside>
+    <div class="container">
+       
+                
+                <div><h1>Welcome to our site</h1></div>
+                
+                
+                <div class="heading"><h1>NOW YOU CAN GENERATE TIMETABLE FOR YOUR OWN COLLEGE</h1></div>
+            
+            <!-- -->
+
+            
+            
+            <!-- <table class="nice-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Add Teachers</td>
+                        <td>Navigate to the "Teachers" section and add the corresponding details. Incorrect details can also be removed via the "edit teachers" option.</td>
+                    </tr>
+                    <tr>
+                        <td>Add Classroom</td>
+                        <td>Navigate to the "Classes" section and add the corresponding details. Incorrect details can also be removed via the "edit classes" option.</td>
+                    </tr>
+                    <tr>
+                        <td>Generate PDF</td>
+                        <td>This feature allows you to generate PDF documents.</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>This feature allows you to send emails.</td>
+                    </tr>
+                    
+                </tbody>
+            </table> -->
+            
+            <div id="container2">
+                <div class="head" ><h2>1.Add the teachers</h2><p>Navigate to the "Teachers"section and add the corresponding details.Incorrect details can also be removed via the "edit teachers option"</p></div>
+                <div class="head"><h2>2.Add the classroom</h2><p>Navigate to the "classroom" section and add the corresponding details.Incorrect details give a pop up that the classroom is already exits</p></div>
+                <div class="head"><h2>3.you can view the teachers of different divisions</h2><p>Navigate to the "dashboard"section .</p></div>
+                <div class="head"><h2>4.Edit and delete the teacher database</h2><p>Navigate to the "Dashboard" section and add the corresponding details.You can edit the name,subject of teachers"</p></div>
+                <div class="head"><h2>5.You can logout</h2><p>Navigate to the "logout" section</p></div>
+            
+            
+    </div>
+    </div>
+    
+    
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <h2>Add Classroom</h2>
+            <form id="classroom-form"action="/add_classroom" method="POST"> 
+                <label for="name">Classroom Name:</label>
+                <input type="text" id="name" name="classroom_name" required>
+                <!-- <label for="capacity">Capacity:</label>
+                <input type="number" id="capacity" name="capacity"> -->
+                
+                <button type="submit">Add Classroom</button>
+            </form>
+            <br>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var errorMessage = document.getElementById("error-message");
+            if (errorMessage && errorMessage.textContent.trim() !== "") {
+                // If error message exists and is not empty, display the pop-up
+                var popup = document.getElementById("popup");
+                if (popup) {
+                    popup.style.display = "block";
+                }
+            }
+        });
+    
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            if (popup) {
+                popup.style.display = "none";
+            }
+        }
+        </script>
+    
+   
+</body>
+</html>

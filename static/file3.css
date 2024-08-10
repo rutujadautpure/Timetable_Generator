@@ -1,0 +1,143 @@
+
+
+body {
+   
+    opacity: 0.9;
+    margin: 0;
+    padding: 0;
+    background-image: url("f1purp2.jpg");
+    background-size: cover;
+    
+}
+
+
+input[type="email"],
+input[type="password"] {
+    height: 30px;
+    width: 200px;
+    border-radius: 15px;
+    border: 1px solid grey;
+}
+
+
+#submit{
+    
+    height: 30px;
+    width:200px; 
+    border-radius: 20px;
+    background-color: rgb(43, 4, 79);
+    color:rgb(244, 235, 217)
+
+}
+
+
+#buttonbox {
+    height: 320px;
+    width: 300px;
+    margin: 100px auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 100px;
+    color: white;
+    
+}
+
+
+
+.inputInfo{
+    border-radius:0.9em;
+    width:14.3em;
+    height:2.2em
+}
+
+.inputInfo:hover{
+    border: 1.5px solid rgb(106, 106, 106);
+}
+
+#navbar{
+    background-color:  rgb(43, 1, 42);
+    color:aliceblue;
+    padding:20px;
+    display:flex;
+    justify-content: center;
+    align-items: fixed;
+    justify-content: space-evenly;
+    width:100%;
+    bottom:0;
+    height:30px;
+    
+    
+}
+
+ul {
+    text-align: center;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    color: white;
+    padding: 25px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    #buttonbox {
+        width: 80%; 
+        /* Adjust width for smaller screens */
+    }
+
+
+    input[type="email"],
+    input[type="password"] {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+    #footer{
+        width:80%;
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}
+
+#buttonSign{
+    background-color: rgb(49, 4, 88);
+    color:rgb(250, 230, 250);
+    font-size: 18px;
+    border:rgb(116, 2, 141);
+    border-radius: 0.8em;
+}
+
+.error-message {
+    color: #b31727;
+    font-weight: 1000;
+    font-size: 14px;
+    margin-top: 17px;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

@@ -1,0 +1,586 @@
+/*body {
+    font-family: Arial, sans-serif;
+    background-color:whitesmoke;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin-top: 20px;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #c8b6ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: 240px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px 100px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #c8b6ff;
+    text-align: left;
+   
+}
+
+th {
+    background-color: #c8b6ff;
+}
+
+tr:hover {
+    background-color: #c8b6ff;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+tr:nth-child(odd) {
+    background-color: #e0e0e0; 
+}
+
+tr:hover {
+    background-color: #ddd; 
+}
+
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: rgb(93, 58, 106);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6309d0; 
+}
+
+h1 {
+    text-align: center; 
+    color: #333; 
+}
+
+.sidenav{
+    width:200px;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    padding:30px 15px;
+    background-color: whitesmoke;
+    color:black;
+    backdrop-filter: blur(800px);
+    text-decoration: none;
+    display:flex;
+    
+    flex-direction: column;
+}
+.user{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100px;
+    font-size: 12px;
+    
+    border-radius:8px;
+   
+}
+ul{
+    list-style:none;
+    padding:0 15px;
+    
+
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidenav ul li {
+    padding: 0px;
+     
+}
+
+.sidenav ul li:hover {
+    background-color: white;
+    color: purple; 
+}
+
+
+
+
+.sidenav li:hover {
+    background-color: rgb(160, 14, 228);
+
+}
+
+ul li{
+    
+    
+    align-items:center;
+    justify-content:flex-start;
+    cursor:pointer;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding:10px;
+};
+
+ul li img{
+    width:30px;
+    margin-right: 10px;
+}
+
+ul li a{
+    white-space:nowrap;
+    color: #333;
+    text-decoration: none;
+    padding:10px;
+
+}
+
+
+
+
+h3{
+    font-style:normal;
+    display: inline;
+    display: flex;
+    justify-content: space-between;
+    display: inline;
+}
+
+.head{
+    background-color: rgb(186, 152, 199);
+    height: 80px;
+    color:#441d4f;
+    margin:30px;
+    margin-top: 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    padding:10px;
+    opacity: 0.8;
+    
+    
+
+
+    
+
+}
+
+.head:hover{
+   
+    
+    box-shadow: 5px 5px 5px 5px rgb(131, 86, 131);
+    
+
+    
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+    text-align: center;
+    color: #333; 
+}
+
+button {
+    background-color: rgb(90, 4, 170);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color:rgb(166, 103, 224); 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd; 
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; 
+}
+
+tr:hover {
+    background-color: #f5f5f5; 
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background-color:  rgb(90, 4, 170);  
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    
+}
+
+.btn:hover {
+    background-color:rgb(166, 103, 224); 
+}
+
+
+
+
+
+
+
+
+.sidenav{
+    width:200px;
+    height:100%;
+    
+    top:0;
+    left:0;
+    padding:30px 15px;
+    background-color: rgb(255, 255, 255);
+    background-image: url("3153256.jpg");
+    
+    border:2px;
+    text-decoration: none;
+    display:flex;
+    margin-top: 60px;
+    flex-direction: column;
+
+
+}
+
+ul{
+    list-style:none;
+    padding:0 15px;
+    
+
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidenav ul li {
+    padding: 0px;
+      
+}
+
+.sidenav ul li:hover {
+    background-color: rgb(255, 255, 255);
+    color: purple;  
+}
+
+#submit {
+    width: 500px;
+    padding: 10px;
+    margin-top: 20px;
+    height:40px;
+    margin-left:180px;
+    background-color: #5f0778;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+
+.sidenav li:hover {
+    background-color: rgb(160, 14, 228);
+
+}
+
+ul li{
+    
+    
+    align-items:center;
+    justify-content:flex-start;
+    cursor:pointer;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding:10px;
+};
+
+ul li img{
+    width:30px;
+    margin-right: 10px;
+}
+
+ul li a{
+    white-space:nowrap;
+    color: #333;
+    text-decoration: none;
+    padding:10px;
+
+}
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    margin-left: 450px;
+    margin-top: 70px;
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Dark gray heading */
+}
+
+button {
+    background-color: rgb(90, 4, 170);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(166, 103, 224); /* Darker green on hover */
+}
+
+ul li img{
+    width:40px;
+    margin-right: 10px;
+    justify-self: center;
+    align-self: center;
+}
+
+ul li a{
+    white-space:nowrap;
+    color: #333;
+    text-decoration: none;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd; /* Light gray border */
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray header background */
+}
+
+tr:hover {
+    background-color: #f5f5f5; /* Lighter gray on hover */
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background-color: rgb(90, 4, 170); /* Green button */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: rgb(166, 103, 224); /* Darker green on hover */
+}
+
+.sidenav {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 15px;
+    background-color: rgb(255, 255, 255);
+    background-image: url("3153256.jpg");
+    border: 2px;
+    text-decoration: none;
+    display: flex;
+    margin-top: 0; /* Adjusted margin */
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidenav ul li {
+    padding: 0px;
+    margin-top: 15px;
+}
+
+.sidenav ul li:hover {
+    background-color: rgb(255, 255, 255);
+    color: purple;
+}
+
+.sidenav li:hover {
+    background-color: rgb(160, 14, 228);
+}
+
+ul li {
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+}
+
+ul li img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+ul li a {
+    white-space: nowrap;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#submit {
+    width: 500px;
+    padding: 10px;
+    margin-top: 20px;
+    height: 40px;
+    margin-left: 180px;
+    background-color: #5f0778;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Common styles for all screen sizes */

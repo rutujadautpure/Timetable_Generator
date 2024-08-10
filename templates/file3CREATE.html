@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="/static/create_acc.css">
+</head>
+<body>
+    
+    
+
+    <!-- <h1>Create Account</h1>
+    <h3>*Please fill in the login details*</h3> -->
+    <form id="signup-form" action="/createAccount" method="POST">
+        <div id="buttonbox">
+            <input id="username" name="username" class="inputInfo" type="text" placeholder="Username">
+            <input id="user_id" name="userid" class="inputInfo" type="text" placeholder="User ID">
+            <input id="password" name="password" type="password" class="inputInfo" placeholder="Password">
+            <input id="confirmPassword" name="confirmpass" type="password" class="inputInfo" placeholder="Confirm Password">
+            <button style="background-color:rgb(43, 4, 79);color:rgb(244, 235, 217);border:transparent" class="log" type="submit">Sign Up</button>
+            <p style="color:rgb(116, 2, 141)">Already registered?&nbsp;&nbsp;&nbsp;<a href="/" style="color:rgb(116, 2, 141);font-size:15px;">Login here</a></p>
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+        </div>
+    </form>
+
+
+    
+
+    <!-- <footer>
+        <div id="navbar">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact Us</a></li>
+                
+            </ul>
+        </div>
+    </footer> -->
+
+    
+
+    <!-- <script>
+        document.getElementById("submit").addEventListener("click", function() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+    
+            // Check if any field is empty
+            if (email === "" || password === "" || confirmPassword === "") {
+                alert("Please fill in all the details.");
+                return; // Stop execution if any field is empty
+            }
+    
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+    
+            // Set account details to localStorage
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            alert("Account created successfully!");
+    
+            // Redirect to newpage.html
+            window.location.href = "index.html";
+        });
+    </script> -->
+    <!-- <script>
+        // Function to display alert box
+        function showAlert(message) {
+            alert(message);
+        }
+
+        // Check if any error message is present in the URL
+        let urlParams = new URLSearchParams(window.location.search);
+        let errorMessage = urlParams.get('error');
+        if (errorMessage) {
+            showAlert(errorMessage);
+        }
+    </script> -->
+</body>
+</html>

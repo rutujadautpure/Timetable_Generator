@@ -1,0 +1,351 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teachers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Teacher ID</th>
+                <th>Teacher Name</th>
+                <th>Subject</th>
+                <th>Frequency</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+                <tr>
+                    <td>{{ teacher.teacherid }}</td>
+                    <td>{{ teacher.name }}</td>
+                    <td>{{ teacher.subject }}</td>
+                    <td>{{ teacher.frequency }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>--->
+
+<!-- Delete hot ahe but edit nhi -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Database</title>
+<link rel="stylesheet" href="info.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Teachers</h1>
+    <button onclick="showDiv(1)">Div 1</button>
+    <button onclick="showDiv(2)">Div 2</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Teacher ID</th>
+                <th>Teacher Name</th>
+                <th>Subject</th>
+                <th>Frequency</th>
+                <th>Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+                <tr>
+                    <td>{{ teacher.teacherid }}</td>
+                    <td>{{ teacher.name }}</td>
+                    <td>{{ teacher.subject }}</td>
+                    <td>{{ teacher.frequency }}</td>
+                    <td class="btn-container">
+                         <a href="/edit_teacher/{{ teacher.teacherid }}"><button class="btn">Edit</button></a> 
+                        
+                        <form action="/delete_teacher/{{ teacher.teacherid }}" method="post">
+                            
+                            <button class="btn" type="submit">Delete</button>
+                        </form>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="header">
+        <div class="sidenav">
+            <div class ="user">
+                
+            </div>
+            
+            <ul>
+                <li><img src="profile-user_64572.png" width="30px"><p>User</p></li>
+                
+                <li><img src="dashboard.jpg" width="30px"><p>Dashboard</p></li>
+                
+                <li><img src="table.jpg" width="30px"><p>timetable</p></li>
+                
+                <li><img src="table.jpg" width="30px"><p>Viewtimetable</p></li>
+                <li></li>
+                <li><img src="presentation_1436766.png" width="30px"><a href="index9.html">Teachers</a></li>
+                
+                
+                <li><img src="logout.png" width="30px"><p>Logout</p></li>
+                
+            </ul>
+        
+
+        </div>
+         
+    </div>
+</div>
+
+<script>
+    function showDiv(divNumber) {
+        window.location.href = '/?div=' + divNumber;
+    }
+</script>
+
+</body>
+</html>
+
+
+
+ -->
+
+
+
+
+<!-- DIV 2 DOES NOT WORK
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Teacher Database</title>
+ <link rel="stylesheet" href="info.css">
+ </head>
+ <body>
+ 
+ <div class="container">
+     <h1>Teachers</h1>
+     <button onclick="showDiv(1)">Div 1</button>
+     <button onclick="showDiv(2)">Div 2</button>
+     <table>
+         <thead>
+             <tr>
+                 <th>Teacher ID</th>
+                 <th>Teacher Name</th>
+                 <th>Subject</th>
+                 <th>Frequency</th>
+                 <th>Actions</th> 
+             </tr>
+         </thead>
+         <tbody>
+             {% for teacher in teachers %}
+                 <tr>
+                     <td>{{ teacher.teacherid }}</td>
+                     <td>{{ teacher.name }}</td>
+                     <td>{{ teacher.subject }}</td>
+                     <td>{{ teacher.frequency }}</td>
+                     <td class="btn-container">
+                         <a href="/edit_teacher/{{ teacher.teacherid }}"><button class="btn">Edit</button></a> 
+                         <form action="/delete_teacher/{{ teacher.teacherid }}?div={{ div }}" method="post">
+
+                            
+                            <button class="btn" type="submit">Delete</button>
+                        </form>
+                     </td>
+                 </tr>
+             {% endfor %}
+         </tbody>
+     </table>
+     <div class="header">
+         <div class="sidenav">
+             <div class ="user">
+                 
+             </div>
+             
+             <ul>
+                 <li><img src="profile-user_64572.png" width="30px"><p>User</p></li>
+                 
+                 <li><img src="dashboard.jpg" width="30px"><p>Dashboard</p></li>
+                 
+                 <li><img src="table.jpg" width="30px"><p>timetable</p></li>
+                 
+                 <li><img src="table.jpg" width="30px"><p>Viewtimetable</p></li>
+                 <li></li>
+                 <li><img src="presentation_1436766.png" width="30px"><a href="index9.html">Teachers</a></li>
+                 
+                 
+                 <li><img src="logout.png" width="30px"><p>Logout</p></li>
+                 
+             </ul>
+         
+ 
+         </div>
+          
+     </div>
+ </div>
+ 
+ <script>
+     function showDiv(divNumber) {
+         window.location.href = '/?div=' + divNumber;
+     }
+ </script>
+ 
+ </body>
+ </html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Teachers</h1>
+    <button onclick="showDiv(1)">Div 1</button>
+    <button onclick="showDiv(2)">Div 2</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Teacher ID</th>
+                <th>Teacher Name</th>
+                <th>Subject</th>
+                <th>Frequency</th>
+                <th>Actions</th> <!-- Added a new column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+                <tr>
+                    <td>{{ teacher.teacherid }}</td>
+                    <td>{{ teacher.name }}</td>
+                    <td>{{ teacher.subject }}</td>
+                    <td>{{ teacher.frequency }}</td>
+                    <td class="btn-container">
+                        {% if div == '1' %}
+                            <a href="/edit_teacher/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                        {% elif div == '2' %}
+                            <a href="/edit_teacher2/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                        {% else %}
+                            <a href="/edit_teacher/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                        {% endif %}
+
+                         <!-- Added edit link -->
+                        <!-- Added a new column for actions <form action="/delete_teacher/{{ teacher.teacherid }}" method="post">
+                            <input type="hidden" name="div" value="{{ div }}">
+                            <button class="btn" type="submit">Delete 1</button>
+                        </form>
+                        <form action="{{ url_for('delete_teacher2', teacher_id=teacher.teacherid) }}" method="post">
+                            <input type="hidden" name="div" value="{{ div }}">
+                            <button class="btn" type="submit">Delete 2</button>
+                        </form>
+                    -->
+                    <form action="{% if div == '1' %}/delete_teacher/{{ teacher.teacherid }}{% else %}{{ url_for('delete_teacher2', teacher_id=teacher.teacherid) }}{% endif %}" method="post">
+                        <input type="hidden" name="div" value="{{ div }}">
+                        <button class="btn" type="submit">Delete</button>
+                    </form>
+                    
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="header">
+        <div class="sidenav">
+            <div class="user">
+                
+            </div>
+            
+            <ul>
+                <li><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px"><p>User</p></li>
+                
+                <li><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px"><p>Dashboard</p></li>
+                
+                
+                
+                <li><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px"><p>Viewtimetable</p></li>
+                <li></li>
+                <li><img src="{{ url_for('static',filename='presentation_1436766.png')}}" width="30px"><a href="index9.html"><p>Teachers</p></a></li>
+                
+                
+                <li><img src="{{ url_for('static',filename='logout.png')}}" width="30px"><p>Logout</p></li>
+                
+            </ul>
+        
+    
+        </div>
+         
+    </div>
+</div>
+
+<!-- <script>
+    function showDiv(divNumber) {
+        window.location.href = '/?div=' + divNumber;
+    }
+</script> -->
+<script>
+    function showDiv(divNumber) {
+        // Get the current query string
+        var queryString = window.location.search;
+
+        // Construct the new query string with the updated div parameter
+        var newQueryString = '?div=' + divNumber;
+
+        // Check if there are existing query parameters
+        if (queryString) {
+            // Remove any existing 'div' parameter from the query string
+            queryString = queryString.replace(/(\?|&)div=\d*/g, '');
+
+            // Check if there are remaining query parameters after removal
+            if (queryString) {
+                // If there are remaining parameters, append the new parameter with '&'
+                newQueryString = queryString + '&' + newQueryString.substring(1);
+            }
+        }
+
+        // Set the new URL with the modified query string
+        window.location.href = window.location.pathname + newQueryString;
+    }
+</script>
+
+
+</body>
+</html>
+
+
+
+

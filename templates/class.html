@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Classroom</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='class.css') }}">
+
+</head>
+<body>
+    <!-- Modal for adding a classroom -->
+<div id="addClassroomModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Classroom</h2>
+        <form id="addClassroomForm" action="{{ url_for('addClassroom') }}" method="POST">
+            <label for="classroom_name">Classroom Name:</label>
+            <input type="text" id="classroom_name" name="classroom_name" required>
+            <button type="submit">Add Classroom</button>
+        </form>
+    </div>
+</div>
+<script>
+    // Get the modal
+var modal = document.getElementById('addClassroomModal');
+
+// Get the link that opens the modal
+var classesLink = document.querySelector('.classes-link');
+
+// When the user clicks on the link, open the modal
+classesLink.onclick = function() {
+    modal.style.display = 'block';
+};
+
+// Get the <span> element that closes the modal
+var closeBtn = document.querySelector('.close');
+
+// When the user clicks on <span> (x), close the modal
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+};
+
+</script>
+</body>
+</html>

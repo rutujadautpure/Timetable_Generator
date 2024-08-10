@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='generate.css') }}">
+    <title>Timetable</title>
+    <style>
+        /* Style for the tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            width: 200px;
+            border: 2px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .class {
+            color: green;
+            font-weight: bold;
+        }
+
+        .subject {
+            color: red;
+            font-weight: bold;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        /* Style for table headings */
+        h1 {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        /* Style for the container */
+        .container {
+            max-width: 400px;
+            margin-left: 400px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            border: 1px solid black;
+        }
+
+        /* Style for the buttons */
+        button {
+            background-color: #4b058b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(160, 14, 228);
+        }
+    </style>
+</head>
+<body>
+<h1>Division 1 Timetable</h1>
+<div class="table">
+    <table>
+        <tr>
+            <th>Day</th>
+            {% for hour in range(smallest_hour, biggest_hour + 1) %}
+                <th>{{ hour}}:00</th>
+            {% endfor %}
+        </tr>
+        {% for day, entries in timetable['Division 1'].items() %}
+            <tr>
+                <td>{{ day_names[day] }}</td>
+                {% for entry in entries %}
+                    <td>
+                        {% if entry[0] == 'Break' %}
+                            Break
+                        {% else %}
+                            <p class="subject">{{ entry[2] }}</p>
+                            <p class="class">{{ entry[3] }}</p>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<br>
+<br>
+
+<h1>Division 2 Timetable</h1>
+<div class="table">
+    {% if poss == 1 %}
+    <table>
+        <tr>
+            <th>Day</th>
+            {% for hour in range(smallest_hour, biggest_hour + 1) %}
+                <th>{{ hour }}:00</th>
+            {% endfor %}
+        </tr>
+        {% for day, entries in timetable['Division 2'].items() %}
+            <tr>
+                <td>{{ day_names[day] }}</td>
+                {% for entry in entries %}
+                    <td>
+                        {% if entry[0] == 'Break' %}
+                            Break
+                        {% else %}
+                            <p class="subject">{{ entry[2] }}</p>
+                            <p class="class">{{ entry[3] }}</p>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<!-- 
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='generate.css') }}">
+     <title>Add Teacher and Subject / Generate Timetable</title>
+     <style>
+         /* Style for the tables */
+         table {
+             width: 100%;
+             border-collapse: collapse; 
+             margin-bottom: 20px;
+         }
+ 
+         th, td {
+             width: 200px;
+             border: 2px solid #ddd;
+             padding: 8px;
+             text-align: center;
+             font-weight: bold;
+         }
+         .class{
+            color: green;
+            font-weight: bold;
+         }
+         .subject{
+            color: red;
+            font-weight: bold;
+         }
+         th {
+             background-color: #f2f2f2;
+             color: #333;
+         }
+ 
+         /* Style for table headings */
+         h1 {
+             font-size: 20px;
+             margin-top: 30px;
+         }
+ 
+         /* Style for the container */
+         .container {
+             max-width: 400px;
+             margin-left: 400px;
+             padding: 20px;
+             display: flex;
+             justify-content: center;
+             justify-content: space-evenly;
+             border: 1px solid black;
+         }
+ 
+         /* Style for the buttons */
+         button {
+             background-color: #4b058b;
+             color: white;
+             padding: 10px 20px;
+             border: none;
+             cursor: pointer;
+             border-radius: 5px;
+         }
+ 
+         button:hover {
+             background-color: rgb(160, 14, 228);
+         }
+     </style>
+ </head>
+ <body>
+ <form action="/generate_timetable" method="post">
+     <div id="timetable">
+         <h3>Fill in the details to generate your college timetable</h3>
+ 
+ 
+         <div class="time-slot">
+             <label>Start Time :</label>
+             <input type="time" name="start_time" required>
+             <label>End Time :</label>
+             <input type="time" name="end_time" required>
+         </div>
+ 
+         <label font-size="17px">Insert break:</label>
+         <br>
+         <div class="time-slot">
+             <label>Start Time :</label>
+             <input type="time" name="break_start_time" required>
+             <label>End Time :</label>
+             <input type="time" name="break_end_time" required>
+         </div>
+         <button id="generateBtn" type="submit">Generate Timetable</button>
+     </div>
+ </form>
+ 
+ 
+ <h1 class="h1">Division 1 Timetable</h1>
+ <div class="table">
+     <table>
+         <tr>
+             <th>Day</th>
+            {% for slot in time_slots %}
+                    <th>{{ slot }}</th>
+            {% endfor %}
+                
+         </tr>
+         {% if timetable %}
+             {% for division, division_timetable in timetable.items() %}
+                 {% if division == 'Division 1' %}
+                     {% for day, entries in division_timetable.items() %}
+                         <tr>
+                             <td>{{ day_names[day] }}</td>
+                             {% for entry in entries %}
+                                 <td><p class="subject">{{ entry[3] }}</p>
+                                    <p class="class">{{ entry[4] }}</p></td>
+                             {% endfor %}
+                         </tr>
+                     {% endfor %}
+                 {% endif %}
+             {% endfor %}
+         {% else %}
+             <tr>
+                 <td colspan="{{ time_slots|length + 1 }}">No timetable available.</td>
+             </tr>
+         {% endif %}
+     </table>
+ </div>
+ 
+ <br>
+ <br>
+ 
+ <h1 class="h1">Division 2 Timetable</h1>
+ <div class="table">
+    <table>
+        <tr>
+            <th>Day</th>
+            {% for slot in time_slots %}
+                    <th>{{ slot }}</th>
+            {% endfor %}
+        </tr>
+        {% if timetable %}
+            {% for division, division_timetable in timetable.items() %}
+                {% if division == 'Division 2' %}
+                    {% for day, entries in division_timetable.items() %}
+                        <tr>
+                            <td>{{ day_names[day] }}</td>
+                            {% for entry in entries %}
+                                <td><p class="subject">{{ entry[3] }}</p>
+                                   <p class="class">{{ entry[4] }}</p></td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="{{ time_slots|length + 1 }}">No timetable available.</td>
+            </tr>
+        {% endif %}
+    </table>
+ </div>
+ 
+ <br>
+ <br>
+    
+    
+ </body>
+ </html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='generate.css') }}">
+     <title>Timetable</title>
+     <style>
+        /* Style for the tables */
+        table {
+             width: 100%;
+             border-collapse: collapse; 
+             margin-bottom: 20px;
+         }
+ 
+         th, td {
+             width: 200px;
+             border: 2px solid #ddd;
+             padding: 8px;
+             text-align: center;
+             font-weight: bold;
+         }
+         .class{
+            color: green;
+            font-weight: bold;
+         }
+         .subject{
+            color: red;
+            font-weight: bold;
+         }
+         th {
+             background-color: #f2f2f2;
+             color: #333;
+         }
+ 
+         /* Style for table headings */
+         h1 {
+             font-size: 20px;
+             margin-top: 30px;
+         }
+ 
+         /* Style for the container */
+         .container {
+             max-width: 400px;
+             margin-left: 400px;
+             padding: 20px;
+             display: flex;
+             justify-content: center;
+             justify-content: space-evenly;
+             border: 1px solid black;
+         }
+ 
+         /* Style for the buttons */
+         button {
+             background-color: #4b058b;
+             color: white;
+             padding: 10px 20px;
+             border: none;
+             cursor: pointer;
+             border-radius: 5px;
+         }
+ 
+         button:hover {
+             background-color: rgb(160, 14, 228);
+         }
+     </style>
+ </head>
+ <body>
+    <h1>Division 1 Timetable</h1>
+    <div class="table">
+        <table>
+            <tr>
+                <th>Day</th>
+                {% for slot in time_slots %}
+                    <th>{{ slot }}</th>
+                {% endfor %}
+            </tr>
+            {% for day, entries in timetable['Division 1'].items() %}
+                <tr>
+                    <td>{{ day }}</td>
+                    {% for entry in entries %}
+                        <td>
+                            <p class="subject">{{ entry[3] }}</p> 
+                            <p class="class">{{ entry[4] }}</p>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+    <br>
+    <br>
+    
+    <h1>Division 2 Timetable</h1>
+    <div class="table">
+        <table>
+            <tr>
+                <th>Day</th>
+                {% for slot in time_slots %}
+                    <th>{{ slot }}</th>
+                {% endfor %}
+            </tr>
+            {% for day, entries in timetable['Division 2'].items() %}
+                <tr>
+                    <td>{{ day }}</td>
+                    {% for entry in entries %}
+                        <td>
+                            <p class="subject">{{ entry[3] }}</p> 
+                            <p class="class">{{ entry[4] }}</p>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>    
+ </body>
+ </html>
+-->
+  

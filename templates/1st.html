@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Teacher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .container label {
+            flex-basis: 30%; /* Adjust as needed */
+        }
+        .container input {
+            flex-basis: 70%; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="background"></div>
+<div class="container">
+    <form action="{% if div == '1' %}/update_teacher/{{ teacher.teacherid }}{% else %}/update_teacher2/{{ teacher.teacherid }}{% endif %}" method="post">
+        <h2>Edit Teacher</h2>
+        <div>
+            <label for="name">Teacher Name:</label>
+            <input type="text" id="name" name="name" value="{{ teacher.name }}">
+        </div>
+        <div>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" value="{{ teacher.subject }}">
+        </div>
+        <div>
+            <label for="frequency">Frequency:</label>
+            <input type="text" id="frequency" name="frequency" value="{{ teacher.frequency }}">
+        </div>
+        <div>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+    
+</div>
+</div>
+
+</body>
+</html>

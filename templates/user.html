@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-xeXN8DRkgP28H5vzFm+fJzFLpdtw3+MHb2xp1ASL7ZHbUpKU6bGLF1vORVA9sUBj" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>User Information</title>
+</head>
+<body>
+    <div id="contain">
+    <!-- <div class="navbar">
+        <ul>
+            <li><a href="#">TimeGen</a></li>
+            <li><a href="mainpage.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">For College</a></li>
+            <li><input id="search" placeholder="Search"></li>   
+        </ul>
+    </div> -->
+    <aside id="side-panel">
+        <ul>
+            <li><a href="user.html"><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px">User</a></li>
+
+            <li><a href="mainpage.html"><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px">Homepage</a></li>
+                <li><a href="displayteacher.html"><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px" >Available Teacher</a></li>
+                
+                
+                
+                <li><a href="timetable.html"><img src="{{ url_for('static',filename='table.jpg')}}" width="30px">Generatetimetable</a></li>
+                <li><a href=""  id="add-classroom-link"><img src="{{ url_for('static',filename='class.png')}}" width="30px">Classes</a></li>
+                <li><a href="teacher.html"><img src="{{ url_for('static',filename='presentation_1436766.png')}}" width="30px">Teachers</a></li>
+                <li><a href="{{url_for('logout')}}"><img src="{{ url_for('static',filename='logout.png')}}" width="30px">Logout</a></li>
+                
+                </ul>
+        </ul>
+    </aside>
+    
+    <div class="container">
+        <div id="user-info">
+            
+                <div class="profile">
+                    <img src="{{ url_for('static',filename='user.avif')}}" alt="Profile Picture" class="profile" width="500px" background-size="cover">
+            
+                    
+            <h2>User Data</h2>
+            <table>
+                <thead>
+                    <tr><th>Username</th>
+                        <th>User ID</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr><td>{{user.username}}</td>
+                            <td>{{ user.userid }}</td>
+                            
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+                </div>
+    </div>
+    </div>
+</body>
+</html>
+

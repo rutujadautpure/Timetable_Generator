@@ -1,0 +1,13 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"mysql://root:@localhost/timetable",
+        "prod_uri":"mysql://root:@localhost/timetable",
+        "gmail-user":"rvdautpure21tp@gmail.com",
+        "gmail-password":"coum gzzh ggct fffp"
+    }
+}
+
+
+

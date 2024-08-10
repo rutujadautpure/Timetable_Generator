@@ -1,0 +1,350 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Database</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Teacher Database</h1>
+    <table>
+        <tr><th>ID</th>
+            <th>Teacher Name</th>
+            <th>Subject Taught</th>
+            <th>Frequency (per week)</th>
+            <th>Action</th>
+        </tr>
+        <tr><td>1239</td>
+            <td>John Doe</td>
+            <td>Mathematics</td>
+            <td>5</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>3451</td>
+            <td>Jane Smith</td>
+            <td>Science</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        
+        <tr><td>5676</td>
+            <td>Nidhi chaudhari</td>
+            <td>Science</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>8910</td>
+            <td>Om chavan</td>
+            <td>Graphics and design</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>1122</td>
+            <td>radha rodge</td>
+            <td>operating system</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>1256</td>
+            <td>Bhakti </td>
+            <td>Data structures</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>1678</td>
+            <td>kushal Smith</td>
+            <td>biology</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>1320</td>
+            <td>Jane rose</td>
+            <td>sensor and automation</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>5610</td>
+            <td>kane Shone</td>
+            <td>Data communication</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>8746</td>
+            <td>ritik sham</td>
+            <td>Toc</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>5752</td>
+            <td>pralhad sinde</td>
+            <td>Mathematics</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+        <tr><td>9047</td>
+            <td>Anjali kadam</td>
+            <td>Science</td>
+            <td>3</td>
+            <td class="btn-container">
+                <button class="btn">Edit</button>
+                <button class="btn">Delete</button>
+            </td>
+        </tr>
+       
+    </table>
+    <div class="header">
+        <div class="sidenav">
+            <div class ="user">
+                
+            </div>
+            
+            <ul>
+                
+                
+                <li><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px"><a href="user.html">User</p></li>
+                    
+                    <li><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px"><a href="info.html">Dashboard</a></li>
+                    
+                    <li><img src="{{ url_for('static',filename='table.jpg')}}" width="30px"><p>timetable</p></li>
+                    
+                    <li><img src="{{ url_for('static',filename='table.jpg')}}" width="30px"><a href="generatetimetable.html">Generatetimetable</a></li>
+                    <li><img src="{{ url_for('static',filename='class.png')}}" width="30px"><a href=""  id="add-classroom-link">Classes</a></li>
+                    <li><img src="{{ url_for('static',filename='presentation_1436766.png')}}" width="30px"><a href="teacher.html">Teachers</a></li>
+                    <li><img src="{{ url_for('static',filename='logout.png')}}" width="30px"><p>Logout</p></li>
+                    
+                
+            </ul>
+        
+
+        </div>
+         
+    </div>
+</div>
+
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Teachers</h1>
+    <button onclick="window.location.href='/div1'">Div 1</button>
+    <button onclick="window.location.href='/div2'">Div 2</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Teacher ID</th>
+                <th>Teacher Name</th>
+                <th>Subject</th>
+                <th>Frequency</th>
+                <th>Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+                <tr>
+                    <td>{{ teacher.teacherid }}</td>
+                    <td>{{ teacher.name }}</td>
+                    <td>{{ teacher.subject }}</td>
+                    <td>{{ teacher.frequency }}</td>
+                    <td class="btn-container">
+                        {% if div == '1' %}
+                            <a href="/edit_teacher/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                        {% elif div == '2' %}
+                            <a href="/edit_teacher2/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                        {% else %}
+                            <a href="/edit_teacher/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                        {% endif %}
+
+                    <form action="{% if div == '1' %}/delete_teacher/{{ teacher.teacherid }}{% else %}{{ url_for('delete_teacher2', teacher_id=teacher.teacherid) }}{% endif %}" method="post">
+                        <input type="hidden" name="div" value="{{ div }}">
+                        <button class="btn" type="submit">Delete</button>
+                    </form>
+                    
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="header">
+        <div class="sidenav">
+            <div class="user">
+                
+            </div>
+            
+            <ul>
+                <li><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px"><p>User</p></li>
+                
+                <li><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px"><p>Dashboard</p></li>
+                
+                
+                
+                <li><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px"><p>Viewtimetable</p></li>
+                <li></li>
+                <li><img src="{{ url_for('static',filename='presentation_1436766.png')}}" width="30px"><a href="index9.html"><p>Teachers</p></a></li>
+                
+                
+                <li><img src="{{ url_for('static',filename='logout.png')}}" width="30px"><p>Logout</p></li>
+                
+            </ul>
+        
+    
+        </div>
+         
+    </div>
+</div>
+
+
+</body>
+</html>
+ -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Teachers</h1>
+    <button  class="div" onclick="window.location.href='/div1'">Div 1</button>
+    <button class="div"onclick="window.location.href='/div2'">Div 2</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Teacher ID</th>
+                <th>Teacher Name</th>
+                <th>Subject</th>
+                <th>Frequency</th>
+                <th>Actions</th> <!-- Added a new column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            {% if teachers %}
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>{{ teacher.teacherid }}</td>
+                        <td>{{ teacher.name }}</td>
+                        <td>{{ teacher.subject }}</td>
+                        <td>{{ teacher.frequency }}</td>
+                        <td class="btn-container">
+                            <a href="/edit_teacher/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                            <form action="/delete_teacher/{{ teacher.teacherid }}" method="post">
+                                <input type="hidden" name="div" value="1">
+                                <button class="btn" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            {% if teachers2 %}
+                {% for teacher in teachers2 %}
+                    <tr>
+                        <td>{{ teacher.teacherid }}</td>
+                        <td>{{ teacher.name }}</td>
+                        <td>{{ teacher.subject }}</td>
+                        <td>{{ teacher.frequency }}</td>
+                        <td class="btn-container">
+                            <a href="/edit_teacher2/{{ teacher.teacherid }}"><button class="btn">Edit</button></a>
+                            <form action="/delete_teacher2/{{ teacher.teacherid }}" method="post">
+                                <input type="hidden" name="div" value="2">
+                                <button class="btn" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <div class="header">
+        <div class="sidenav">
+            <div class="user">
+                
+            </div>
+            
+            <ul>
+                <li><a href="user.html"><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px">User</a></li>
+
+                <li><a href="mainpage.html"><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px">Homepage</a></li>
+                    <li><a href="displayteacher.html"><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px" >Available Teacher</a></li>
+                    
+                    
+                    
+                    <li><a href="timetable.html"><img src="{{ url_for('static',filename='table.jpg')}}" width="30px">Generatetimetable</a></li>
+                    <li><a href=""  id="add-classroom-link"><img src="{{ url_for('static',filename='class.png')}}" width="30px">Classes</a></li>
+                    <li><a href="teacher.html"><img src="{{ url_for('static',filename='presentation_1436766.png')}}" width="30px">Teachers</a></li>
+                    <li><a href="{{url_for('logout')}}"><img src="{{ url_for('static',filename='logout.png')}}" width="30px">Logout</a></li>
+                    
+                    </ul>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+

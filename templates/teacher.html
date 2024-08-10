@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Info</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-xeXN8DRkgP28H5vzFm+fJzFLpdtw3+MHb2xp1ASL7ZHbUpKU6bGLF1vORVA9sUBj" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='teacher.css') }}">
+</head>
+<body>
+    <div id="popup">
+        <p id="error-message">{{ error_message }}</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    <div class="header">
+        <div class="sidenav">
+            
+            <ul>
+                <li><a href="user.html"><img src="{{ url_for('static',filename='profile-user_64572.png')}}" width="30px">User</a></li>
+                <li><a href="mainpage.html"><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px">Homepage</a></li>
+                
+                    <li><a href="displayteacher.html"><img src="{{ url_for('static',filename='dashboard.jpg')}}" width="30px" >Available Teacher</a></li>
+                    
+                    
+                    
+                    <li><a href="timetable.html"><img src="{{ url_for('static',filename='table.jpg')}}" width="30px">Generatetimetable</a></li>
+                    <li><a href=""  id="add-classroom-link"><img src="{{ url_for('static',filename='class.png')}}" width="30px">Classes</a></li>
+                    <li><a href="teacher.html"><img src="{{ url_for('static',filename='presentation_1436766.png')}}" width="30px">Teachers</a></li>
+                    <li><a href="{{url_for('logout')}}"><img src="{{ url_for('static',filename='logout.png')}}" width="30px">Logout</a></li>
+                    
+                    </ul>
+            </ul>
+        
+
+        </div>
+         
+    </div>
+    
+    <div class="container">
+        <h2>ADD TEACHERS AND SUBJECT</h2>
+        <form action="/add_teacher_subject" method="POST">
+            <label for="branch">Branch</label>
+            <select id="branch" name="branch" required>
+                <option value="Computer">Computer</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Metallurgy">Metallurgy</option>
+                <option value="Manufacturing & Production">Manufacturing & Production</option>
+                <option value="Electrical">Electrical</option>
+                <option value="ENTC">ENTC</option>
+                <option value="Instrumentation">Instrumentation</option>
+            </select>
+            <br>
+            
+            <select id="year" name="year" required>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                
+            </select>
+            <br>
+            <select id="division" name="division" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                
+            </select>
+              
+              <br>
+              <input type="text" id="teacher_id" placeholder="TeacherID" name="teacherid" required>
+              <br>
+              <input type="text" id="teacher_name" placeholder="Teacher Name" name="teachername" required>
+              <br>
+              <input type="text" id="subject" placeholder="Subject" name="subject" required>
+              <br>
+              <input type="text" id="frequency" placeholder="Frequency" name="frequency" required>
+              <br>
+              <input type="submit" value="Add Teacher and Subject"></input>
+          </form>
+    
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var errorMessage = document.getElementById("error-message");
+        if (errorMessage && errorMessage.textContent.trim() !== "") {
+            // If error message exists and is not empty, display the pop-up
+            var popup = document.getElementById("popup");
+            if (popup) {
+                popup.style.display = "block";
+            }
+        }
+    });
+
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        if (popup) {
+            popup.style.display = "none";
+        }
+    }
+    </script>
+   
+    
+</body>
+</html>
